@@ -5,12 +5,12 @@
   
   <title>安卓中的坐标系 | 刘起玲的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;#x5B89;&amp;#x5353;&amp;#x4E2D;&amp;#x7684;&amp;#x5750;&amp;#x6807;&amp;#x7CFB;&amp;#x4F5C;&amp;#x8005;&amp;#x5FAE;&amp;#x535A;: @GcsSloop&amp;#x3010;&amp;#x672C;&amp;#x7CFB;&amp;#x5217;&amp;#x76F8;&amp;#x5173;&amp;#x6587;&amp;#x7AE0;&amp;#x3011;&amp;#x4E00;.&amp;#x5C4F;&amp;#x5E55;&amp;#x5">
+  <meta name="description" content="安卓中的坐标系作者微博: @GcsSloop【本系列相关文章】一.屏幕坐标系和数学坐标系的区别由于移动设备一般定义屏幕左上角为坐标原点，向右为x轴增大方向，向下为y轴增大方向，所以在手机屏幕上的坐标系与数学中常见的坐标系是稍微有点差别的，详情如下： （PS：其中的∠a 是对应的，注意y轴方向！）  实际屏幕上的默认坐标系如下：  PS: 假设其中棕色部分为手机屏幕   二.View的坐标系注意：V">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安卓中的坐标系">
 <meta property="og:url" content="http://xiaominglei001.github.io/2017/06/27/安卓中的坐标系/index.html">
 <meta property="og:site_name" content="刘起玲的博客">
-<meta property="og:description" content="&amp;#x5B89;&amp;#x5353;&amp;#x4E2D;&amp;#x7684;&amp;#x5750;&amp;#x6807;&amp;#x7CFB;&amp;#x4F5C;&amp;#x8005;&amp;#x5FAE;&amp;#x535A;: @GcsSloop&amp;#x3010;&amp;#x672C;&amp;#x7CFB;&amp;#x5217;&amp;#x76F8;&amp;#x5173;&amp;#x6587;&amp;#x7AE0;&amp;#x3011;&amp;#x4E00;.&amp;#x5C4F;&amp;#x5E55;&amp;#x5">
+<meta property="og:description" content="安卓中的坐标系作者微博: @GcsSloop【本系列相关文章】一.屏幕坐标系和数学坐标系的区别由于移动设备一般定义屏幕左上角为坐标原点，向右为x轴增大方向，向下为y轴增大方向，所以在手机屏幕上的坐标系与数学中常见的坐标系是稍微有点差别的，详情如下： （PS：其中的∠a 是对应的，注意y轴方向！）  实际屏幕上的默认坐标系如下：  PS: 假设其中棕色部分为手机屏幕   二.View的坐标系注意：V">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/005Xtdi2jw1f1qygzfvhoj308c0dwglr.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/005Xtdi2jw1f1qyhbqvihj308c0dwjrh.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/005Xtdi2jw1f1qyhjy7h8j308c0dwq32.jpg">
@@ -20,7 +20,7 @@
 <meta property="og:updated_time" content="2017-06-27T05:24:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安卓中的坐标系">
-<meta name="twitter:description" content="&amp;#x5B89;&amp;#x5353;&amp;#x4E2D;&amp;#x7684;&amp;#x5750;&amp;#x6807;&amp;#x7CFB;&amp;#x4F5C;&amp;#x8005;&amp;#x5FAE;&amp;#x535A;: @GcsSloop&amp;#x3010;&amp;#x672C;&amp;#x7CFB;&amp;#x5217;&amp;#x76F8;&amp;#x5173;&amp;#x6587;&amp;#x7AE0;&amp;#x3011;&amp;#x4E00;.&amp;#x5C4F;&amp;#x5E55;&amp;#x5">
+<meta name="twitter:description" content="安卓中的坐标系作者微博: @GcsSloop【本系列相关文章】一.屏幕坐标系和数学坐标系的区别由于移动设备一般定义屏幕左上角为坐标原点，向右为x轴增大方向，向下为y轴增大方向，所以在手机屏幕上的坐标系与数学中常见的坐标系是稍微有点差别的，详情如下： （PS：其中的∠a 是对应的，注意y轴方向！）  实际屏幕上的默认坐标系如下：  PS: 假设其中棕色部分为手机屏幕   二.View的坐标系注意：V">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/large/005Xtdi2jw1f1qygzfvhoj308c0dwglr.jpg">
   
     <link rel="alternate" href="/atom.xml" title="刘起玲的博客" type="application/atom+xml">
@@ -96,53 +96,53 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="&#x5B89;&#x5353;&#x4E2D;&#x7684;&#x5750;&#x6807;&#x7CFB;"><a href="#&#x5B89;&#x5353;&#x4E2D;&#x7684;&#x5750;&#x6807;&#x7CFB;" class="headerlink" title="&#x5B89;&#x5353;&#x4E2D;&#x7684;&#x5750;&#x6807;&#x7CFB;"></a>&#x5B89;&#x5353;&#x4E2D;&#x7684;&#x5750;&#x6807;&#x7CFB;</h1><h3 id="&#x4F5C;&#x8005;&#x5FAE;&#x535A;-GcsSloop"><a href="#&#x4F5C;&#x8005;&#x5FAE;&#x535A;-GcsSloop" class="headerlink" title="&#x4F5C;&#x8005;&#x5FAE;&#x535A;: @GcsSloop"></a>&#x4F5C;&#x8005;&#x5FAE;&#x535A;: <a href="http://weibo.com/GcsSloop" target="_blank" rel="external">@GcsSloop</a></h3><h3 id="&#x3010;&#x672C;&#x7CFB;&#x5217;&#x76F8;&#x5173;&#x6587;&#x7AE0;&#x3011;"><a href="#&#x3010;&#x672C;&#x7CFB;&#x5217;&#x76F8;&#x5173;&#x6587;&#x7AE0;&#x3011;" class="headerlink" title="&#x3010;&#x672C;&#x7CFB;&#x5217;&#x76F8;&#x5173;&#x6587;&#x7AE0;&#x3011;"></a><a href="http://www.gcssloop.com/1970/01/CustomViewIndex/" target="_blank" rel="external">&#x3010;&#x672C;&#x7CFB;&#x5217;&#x76F8;&#x5173;&#x6587;&#x7AE0;&#x3011;</a></h3><h2 id="&#x4E00;-&#x5C4F;&#x5E55;&#x5750;&#x6807;&#x7CFB;&#x548C;&#x6570;&#x5B66;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x533A;&#x522B;"><a href="#&#x4E00;-&#x5C4F;&#x5E55;&#x5750;&#x6807;&#x7CFB;&#x548C;&#x6570;&#x5B66;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x533A;&#x522B;" class="headerlink" title="&#x4E00;.&#x5C4F;&#x5E55;&#x5750;&#x6807;&#x7CFB;&#x548C;&#x6570;&#x5B66;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x533A;&#x522B;"></a>&#x4E00;.&#x5C4F;&#x5E55;&#x5750;&#x6807;&#x7CFB;&#x548C;&#x6570;&#x5B66;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x533A;&#x522B;</h2><p>&#x7531;&#x4E8E;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E00;&#x822C;&#x5B9A;&#x4E49;&#x5C4F;&#x5E55;&#x5DE6;&#x4E0A;&#x89D2;&#x4E3A;&#x5750;&#x6807;&#x539F;&#x70B9;&#xFF0C;&#x5411;&#x53F3;&#x4E3A;x&#x8F74;&#x589E;&#x5927;&#x65B9;&#x5411;&#xFF0C;&#x5411;&#x4E0B;&#x4E3A;y&#x8F74;&#x589E;&#x5927;&#x65B9;&#x5411;&#xFF0C;<br>&#x6240;&#x4EE5;&#x5728;&#x624B;&#x673A;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x5750;&#x6807;&#x7CFB;&#x4E0E;&#x6570;&#x5B66;&#x4E2D;&#x5E38;&#x89C1;&#x7684;&#x5750;&#x6807;&#x7CFB;&#x662F;&#x7A0D;&#x5FAE;&#x6709;&#x70B9;&#x5DEE;&#x522B;&#x7684;&#xFF0C;&#x8BE6;&#x60C5;&#x5982;&#x4E0B;&#xFF1A;</p>
-<p>&#xFF08;<strong>PS&#xFF1A;&#x5176;&#x4E2D;&#x7684;&#x2220;a &#x662F;&#x5BF9;&#x5E94;&#x7684;&#xFF0C;&#x6CE8;&#x610F;y&#x8F74;&#x65B9;&#x5411;&#xFF01;</strong>&#xFF09;</p>
-<p><a class="magnific-img" href="http://ww2.sinaimg.cn/large/005Xtdi2jw1f1qygzfvhoj308c0dwglr.jpg"><img src="http://ww2.sinaimg.cn/large/005Xtdi2jw1f1qygzfvhoj308c0dwglr.jpg" alt="" class="ui centered image"></a><br><a class="magnific-img" href="http://ww1.sinaimg.cn/large/005Xtdi2jw1f1qyhbqvihj308c0dwjrh.jpg"><img src="http://ww1.sinaimg.cn/large/005Xtdi2jw1f1qyhbqvihj308c0dwjrh.jpg" alt="" class="ui centered image"></a></p>
-<p><strong>&#x5B9E;&#x9645;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x9ED8;&#x8BA4;&#x5750;&#x6807;&#x7CFB;&#x5982;&#x4E0B;&#xFF1A;</strong></p>
+        <h1 id="安卓中的坐标系"><a href="#安卓中的坐标系" class="headerlink" title="安卓中的坐标系"></a>安卓中的坐标系</h1><h3 id="作者微博-GcsSloop"><a href="#作者微博-GcsSloop" class="headerlink" title="作者微博: @GcsSloop"></a>作者微博: <a href="http://weibo.com/GcsSloop" target="_blank" rel="external">@GcsSloop</a></h3><h3 id="【本系列相关文章】"><a href="#【本系列相关文章】" class="headerlink" title="【本系列相关文章】"></a><a href="http://www.gcssloop.com/1970/01/CustomViewIndex/" target="_blank" rel="external">【本系列相关文章】</a></h3><h2 id="一-屏幕坐标系和数学坐标系的区别"><a href="#一-屏幕坐标系和数学坐标系的区别" class="headerlink" title="一.屏幕坐标系和数学坐标系的区别"></a>一.屏幕坐标系和数学坐标系的区别</h2><p>由于移动设备一般定义屏幕左上角为坐标原点，向右为x轴增大方向，向下为y轴增大方向，<br>所以在手机屏幕上的坐标系与数学中常见的坐标系是稍微有点差别的，详情如下：</p>
+<p>（<strong>PS：其中的∠a 是对应的，注意y轴方向！</strong>）</p>
+<p><img src="http://ww2.sinaimg.cn/large/005Xtdi2jw1f1qygzfvhoj308c0dwglr.jpg" alt=""><br><img src="http://ww1.sinaimg.cn/large/005Xtdi2jw1f1qyhbqvihj308c0dwjrh.jpg" alt=""></p>
+<p><strong>实际屏幕上的默认坐标系如下：</strong></p>
 <blockquote>
-<p>PS: &#x5047;&#x8BBE;&#x5176;&#x4E2D;&#x68D5;&#x8272;&#x90E8;&#x5206;&#x4E3A;&#x624B;&#x673A;&#x5C4F;&#x5E55;</p>
+<p>PS: 假设其中棕色部分为手机屏幕</p>
 </blockquote>
-<p><a class="magnific-img" href="http://ww3.sinaimg.cn/large/005Xtdi2jw1f1qyhjy7h8j308c0dwq32.jpg"><img src="http://ww3.sinaimg.cn/large/005Xtdi2jw1f1qyhjy7h8j308c0dwq32.jpg" alt="" class="ui centered image"></a></p>
-<h2 id="&#x4E8C;-View&#x7684;&#x5750;&#x6807;&#x7CFB;"><a href="#&#x4E8C;-View&#x7684;&#x5750;&#x6807;&#x7CFB;" class="headerlink" title="&#x4E8C;.View&#x7684;&#x5750;&#x6807;&#x7CFB;"></a>&#x4E8C;.View&#x7684;&#x5750;&#x6807;&#x7CFB;</h2><p><strong>&#x6CE8;&#x610F;&#xFF1A;View&#x7684;&#x5750;&#x6807;&#x7CFB;&#x7EDF;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x7236;&#x63A7;&#x4EF6;&#x800C;&#x8A00;&#x7684;.</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">getTop();       <span class="comment">//&#x83B7;&#x53D6;&#x5B50;View&#x5DE6;&#x4E0A;&#x89D2;&#x8DDD;&#x7236;View&#x9876;&#x90E8;&#x7684;&#x8DDD;&#x79BB;</span></div><div class="line">getLeft();      <span class="comment">//&#x83B7;&#x53D6;&#x5B50;View&#x5DE6;&#x4E0A;&#x89D2;&#x8DDD;&#x7236;View&#x5DE6;&#x4FA7;&#x7684;&#x8DDD;&#x79BB;</span></div><div class="line">getBottom();    <span class="comment">//&#x83B7;&#x53D6;&#x5B50;View&#x53F3;&#x4E0B;&#x89D2;&#x8DDD;&#x7236;View&#x9876;&#x90E8;&#x7684;&#x8DDD;&#x79BB;</span></div><div class="line">getRight();     <span class="comment">//&#x83B7;&#x53D6;&#x5B50;View&#x53F3;&#x4E0B;&#x89D2;&#x8DDD;&#x7236;View&#x5DE6;&#x4FA7;&#x7684;&#x8DDD;&#x79BB;</span></div></pre></td></tr></table></figure>
-<p><strong>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</strong></p>
-<p><a class="magnific-img" href="http://ww2.sinaimg.cn/large/005Xtdi2gw1f1qzqwvkkbj308c0dwgm9.jpg"><img src="http://ww2.sinaimg.cn/large/005Xtdi2gw1f1qzqwvkkbj308c0dwgm9.jpg" alt="" class="ui centered image"></a></p>
-<h2 id="&#x4E09;-MotionEvent&#x4E2D;-get-&#x548C;-getRaw-&#x7684;&#x533A;&#x522B;"><a href="#&#x4E09;-MotionEvent&#x4E2D;-get-&#x548C;-getRaw-&#x7684;&#x533A;&#x522B;" class="headerlink" title="&#x4E09;.MotionEvent&#x4E2D; get &#x548C; getRaw &#x7684;&#x533A;&#x522B;"></a>&#x4E09;.MotionEvent&#x4E2D; get &#x548C; getRaw &#x7684;&#x533A;&#x522B;</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">event</span>.getX();       <span class="comment">//&#x89E6;&#x6478;&#x70B9;&#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x6240;&#x5728;&#x7EC4;&#x4EF6;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x5750;&#x6807;</span></div><div class="line"><span class="keyword">event</span>.getY();</div><div class="line"> </div><div class="line"><span class="keyword">event</span>.getRawX();    <span class="comment">//&#x89E6;&#x6478;&#x70B9;&#x76F8;&#x5BF9;&#x4E8E;&#x5C4F;&#x5E55;&#x9ED8;&#x8BA4;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x5750;&#x6807;</span></div><div class="line"><span class="keyword">event</span>.getRawY();</div></pre></td></tr></table></figure>
-<p><strong>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</strong></p>
+<p><img src="http://ww3.sinaimg.cn/large/005Xtdi2jw1f1qyhjy7h8j308c0dwq32.jpg" alt=""></p>
+<h2 id="二-View的坐标系"><a href="#二-View的坐标系" class="headerlink" title="二.View的坐标系"></a>二.View的坐标系</h2><p><strong>注意：View的坐标系统是相对于父控件而言的.</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">getTop();       <span class="comment">//获取子View左上角距父View顶部的距离</span></div><div class="line">getLeft();      <span class="comment">//获取子View左上角距父View左侧的距离</span></div><div class="line">getBottom();    <span class="comment">//获取子View右下角距父View顶部的距离</span></div><div class="line">getRight();     <span class="comment">//获取子View右下角距父View左侧的距离</span></div></pre></td></tr></table></figure>
+<p><strong>如下图所示：</strong></p>
+<p><img src="http://ww2.sinaimg.cn/large/005Xtdi2gw1f1qzqwvkkbj308c0dwgm9.jpg" alt=""></p>
+<h2 id="三-MotionEvent中-get-和-getRaw-的区别"><a href="#三-MotionEvent中-get-和-getRaw-的区别" class="headerlink" title="三.MotionEvent中 get 和 getRaw 的区别"></a>三.MotionEvent中 get 和 getRaw 的区别</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">event</span>.getX();       <span class="comment">//触摸点相对于其所在组件坐标系的坐标</span></div><div class="line"><span class="keyword">event</span>.getY();</div><div class="line"> </div><div class="line"><span class="keyword">event</span>.getRawX();    <span class="comment">//触摸点相对于屏幕默认坐标系的坐标</span></div><div class="line"><span class="keyword">event</span>.getRawY();</div></pre></td></tr></table></figure>
+<p><strong>如下图所示：</strong></p>
 <blockquote>
-<p>PS:&#x5176;&#x4E2D;&#x76F8;&#x540C;&#x989C;&#x8272;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x5BF9;&#x5E94;&#x7684;&#xFF0C;&#x5176;&#x4E2D;&#x4E3A;&#x4E86;&#x663E;&#x793A;&#x65B9;&#x4FBF;&#xFF0C;&#x84DD;&#x8272;&#x7BAD;&#x5934;&#x5411;&#x5DE6;&#x7A0D;&#x5FAE;&#x504F;&#x79FB;&#x4E86;&#x4E00;&#x70B9;.</p>
+<p>PS:其中相同颜色的内容是对应的，其中为了显示方便，蓝色箭头向左稍微偏移了一点.</p>
 </blockquote>
-<p><a class="magnific-img" href="http://ww1.sinaimg.cn/large/005Xtdi2jw1f1r2bdlqhbj308c0dwwew.jpg"><img src="http://ww1.sinaimg.cn/large/005Xtdi2jw1f1r2bdlqhbj308c0dwwew.jpg" alt="" class="ui centered image"></a></p>
-<h2 id="&#x56DB;-&#x6838;&#x5FC3;&#x8981;&#x70B9;"><a href="#&#x56DB;-&#x6838;&#x5FC3;&#x8981;&#x70B9;" class="headerlink" title="&#x56DB;.&#x6838;&#x5FC3;&#x8981;&#x70B9;"></a>&#x56DB;.&#x6838;&#x5FC3;&#x8981;&#x70B9;</h2><table>
+<p><img src="http://ww1.sinaimg.cn/large/005Xtdi2jw1f1r2bdlqhbj308c0dwwew.jpg" alt=""></p>
+<h2 id="四-核心要点"><a href="#四-核心要点" class="headerlink" title="四.核心要点"></a>四.核心要点</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">&#x5E8F;&#x53F7;</th>
-<th>&#x8981;&#x70B9;</th>
+<th style="text-align:center">序号</th>
+<th>要点</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">  1</td>
-<td>&#x5728;&#x6570;&#x5B66;&#x4E2D;&#x5E38;&#x89C1;&#x7684;&#x5750;&#x6807;&#x7CFB;&#x4E0E;&#x5C4F;&#x5E55;&#x9ED8;&#x8BA4;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x5DEE;&#x522B;</td>
+<td>在数学中常见的坐标系与屏幕默认坐标系的差别</td>
 </tr>
 <tr>
 <td style="text-align:center">  2</td>
-<td>View&#x7684;&#x5750;&#x6807;&#x7CFB;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x7236;&#x63A7;&#x4EF6;&#x800C;&#x8A00;&#x7684;</td>
+<td>View的坐标系是相对于父控件而言的</td>
 </tr>
 <tr>
 <td style="text-align:center">  3</td>
-<td>MotionEvent&#x4E2D;get&#x548C;getRaw&#x7684;&#x533A;&#x522B;</td>
+<td>MotionEvent中get和getRaw的区别</td>
 </tr>
 </tbody>
 </table>
-<h2 id="&#x4E94;-&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;"><a href="#&#x4E94;-&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;" class="headerlink" title="&#x4E94;.&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;"></a>&#x4E94;.&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;</h2><p><a href="http://blog.csdn.net/wangjinyu501/article/details/21827341" target="_blank" rel="external">Android &#x5C4F;&#x5E55;&#xFF08;View&#xFF09;&#x5750;&#x6807;&#x7CFB;&#x7EDF;</a></p>
-<h2 id="About-Me"><a href="#About-Me" class="headerlink" title="About Me"></a>About Me</h2><h3 id="&#x4F5C;&#x8005;&#x5FAE;&#x535A;-GcsSloop-1"><a href="#&#x4F5C;&#x8005;&#x5FAE;&#x535A;-GcsSloop-1" class="headerlink" title="&#x4F5C;&#x8005;&#x5FAE;&#x535A;: @GcsSloop"></a>&#x4F5C;&#x8005;&#x5FAE;&#x535A;: <a href="http://weibo.com/GcsSloop" target="_blank">@GcsSloop</a></h3><p><a href="http://www.gcssloop.com/1970/01/about/" target="_blank"> <a class="magnific-img" href="http://ww4.sinaimg.cn/large/005Xtdi2gw1f1qn89ihu3j315o0dwwjc.jpg"><img src="http://ww4.sinaimg.cn/large/005Xtdi2gw1f1qn89ihu3j315o0dwwjc.jpg" width="300/" class="ui centered image"></a> </a></p>
+<h2 id="五-参考文章："><a href="#五-参考文章：" class="headerlink" title="五.参考文章："></a>五.参考文章：</h2><p><a href="http://blog.csdn.net/wangjinyu501/article/details/21827341" target="_blank" rel="external">Android 屏幕（View）坐标系统</a></p>
+<h2 id="About-Me"><a href="#About-Me" class="headerlink" title="About Me"></a>About Me</h2><h3 id="作者微博-GcsSloop-1"><a href="#作者微博-GcsSloop-1" class="headerlink" title="作者微博: @GcsSloop"></a>作者微博: <a href="http://weibo.com/GcsSloop" target="_blank">@GcsSloop</a></h3><p><a href="http://www.gcssloop.com/1970/01/about/" target="_blank"> <img src="http://ww4.sinaimg.cn/large/005Xtdi2gw1f1qn89ihu3j315o0dwwjc.jpg" width="300/"> </a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xiaominglei001.github.io/2017/06/27/安卓中的坐标系/" data-id="cj4f52fd60000ywu7u4k5pao3" class="article-share-link">Share</a>
+      <a data-url="http://xiaominglei001.github.io/2017/06/27/安卓中的坐标系/" data-id="cj4f57c7u0001qku7ccma0r9s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -150,6 +150,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/06/27/安卓中的颜色/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          安卓中的颜色
+        
+      </div>
+    </a>
   
   
     <a href="/2017/06/27/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -189,6 +198,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/06/27/安卓中的颜色/">安卓中的颜色</a>
+          </li>
         
           <li>
             <a href="/2017/06/27/安卓中的坐标系/">安卓中的坐标系</a>
