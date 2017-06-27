@@ -1,0 +1,880 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="简要描述：   获取工单详情接口  请求URL：   /app/repair/order/detail  请求方式：  POST   参数：     参数名 必选 类型 说明     token 是 string 口令   id 是 string 工单id     返回示例 12345678910111213141516171819202122232425262728293031323334353">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hello">
+<meta property="og:url" content="http://xiaominglei001.github.io/2017/06/27/hello/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="简要描述：   获取工单详情接口  请求URL：   /app/repair/order/detail  请求方式：  POST   参数：     参数名 必选 类型 说明     token 是 string 口令   id 是 string 工单id     返回示例 12345678910111213141516171819202122232425262728293031323334353">
+<meta property="og:updated_time" content="2017-06-27T04:39:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hello">
+<meta name="twitter:description" content="简要描述：   获取工单详情接口  请求URL：   /app/repair/order/detail  请求方式：  POST   参数：     参数名 必选 类型 说明     token 是 string 口令   id 是 string 工单id     返回示例 12345678910111213141516171819202122232425262728293031323334353">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://xiaominglei001.github.io/2017/06/27/hello/"/>
+
+
+
+
+
+  <title>hello | 我的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">我的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一天进步一点</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://xiaominglei001.github.io/2017/06/27/hello/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">hello</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-27T12:38:29+08:00">
+                2017-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>简要描述：</strong> </p>
+<ul>
+<li>获取工单详情接口</li>
+</ul>
+<p><strong>请求URL：</strong> </p>
+<ul>
+<li><code>/app/repair/order/detail</code></li>
+</ul>
+<p><strong>请求方式：</strong></p>
+<ul>
+<li>POST </li>
+</ul>
+<p><strong>参数：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数名</th>
+<th style="text-align:left">必选</th>
+<th style="text-align:left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">是</td>
+<td style="text-align:left">string</td>
+<td>口令</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">是</td>
+<td style="text-align:left">string</td>
+<td>工单id</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>返回示例</strong></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"data"</span>: &#123;</div><div class="line">        <span class="attr">"imgs"</span>: [</div><div class="line">            &#123;</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"2"</span>,</div><div class="line">                <span class="attr">"url"</span>: <span class="string">"/ims_file/image/20170609/1496987434304.jpg"</span></div><div class="line">            &#125;</div><div class="line">        ],</div><div class="line">        <span class="attr">"orderNo"</span>: <span class="string">"123456789"</span>,</div><div class="line">        <span class="attr">"level"</span>: <span class="number">3</span>,</div><div class="line">        <span class="attr">"remark"</span>: <span class="string">"备注信息"</span>,</div><div class="line">        <span class="attr">"contentDesc"</span>: <span class="string">""</span>,</div><div class="line">        <span class="attr">"repairResult"</span>: <span class="string">"0"</span>,</div><div class="line">        <span class="attr">"createdDate"</span>: <span class="string">"2017-06-12 17:17:24"</span>,</div><div class="line">        <span class="attr">"applier"</span>: &#123;</div><div class="line">            <span class="attr">"userId"</span>: <span class="string">"123456"</span>,</div><div class="line">            <span class="attr">"name"</span>: <span class="string">"史蒂芬唐"</span>,</div><div class="line">            <span class="attr">"phone"</span>: <span class="string">"13111111112"</span>,</div><div class="line">            <span class="attr">"depts"</span>: <span class="string">"超市事业部,工程部"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"sourceDesc"</span>: <span class="string">"a栋电梯"</span>,</div><div class="line">        <span class="attr">"id"</span>: <span class="string">"1496913444510"</span>,</div><div class="line">        <span class="attr">"accepter"</span>: &#123;</div><div class="line">            <span class="attr">"userId"</span>: <span class="string">"123456"</span>,</div><div class="line">            <span class="attr">"name"</span>: <span class="string">"史蒂芬唐"</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">"flowStatus"</span>: <span class="number">2003</span>,</div><div class="line">        <span class="attr">"items"</span>: [</div><div class="line">            &#123;</div><div class="line">                <span class="attr">"faultReasonDesc"</span>: <span class="string">"1"</span>,</div><div class="line">                <span class="attr">"faultProcessId"</span>: <span class="string">"14503473040119183"</span>,</div><div class="line">                <span class="attr">"imgs"</span>: [</div><div class="line">                    &#123;</div><div class="line">                        <span class="attr">"id"</span>: <span class="string">"3"</span>,</div><div class="line">                        <span class="attr">"url"</span>: <span class="string">"/ims_file/image/20170609/1496987434304.jpg"</span></div><div class="line">                    &#125;</div><div class="line">                ],</div><div class="line">                <span class="attr">"faultTypeDesc"</span>: <span class="string">"1"</span>,</div><div class="line">                <span class="attr">"faultProcessDesc"</span>: <span class="string">"1"</span>,</div><div class="line">                <span class="attr">"faultTypeId"</span>: <span class="string">"1448515047574674754"</span>,</div><div class="line">                <span class="attr">"parts"</span>: [</div><div class="line">                    &#123;</div><div class="line">                        <span class="attr">"id"</span>: <span class="string">"1495440976821"</span>,</div><div class="line">                        <span class="attr">"name"</span>: <span class="string">"制冷剂"</span>,</div><div class="line">                        <span class="attr">"modelCode"</span>: <span class="string">"R22 22.7kg/桶"</span>,</div><div class="line">                        <span class="attr">"unitType"</span>: <span class="string">"1495433222013"</span>,</div><div class="line">                        <span class="attr">"brand"</span>: <span class="string">"杜邦"</span>,</div><div class="line">                        <span class="attr">"img"</span>: <span class="string">""</span>,</div><div class="line">                        <span class="attr">"useScope"</span>: <span class="string">""</span>,</div><div class="line">                        <span class="attr">"paramDesc"</span>: <span class="string">""</span>,</div><div class="line">                        <span class="attr">"quantity"</span>: <span class="number">0</span></div><div class="line">                    &#125;</div><div class="line">                ],</div><div class="line">                <span class="attr">"orderTypeId"</span>: <span class="string">"1"</span>,</div><div class="line">                <span class="attr">"id"</span>: <span class="string">"1"</span>,</div><div class="line">                <span class="attr">"faultReasonId"</span>: <span class="string">"14503472470116249"</span>,</div><div class="line">                <span class="attr">"orderTypeDesc"</span>: <span class="string">"1"</span></div><div class="line">            &#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"status"</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">"msg"</span>: <span class="string">""</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> <strong>返回参数说明</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数名</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">工单id</td>
+</tr>
+<tr>
+<td style="text-align:left">remark</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">备注信息</td>
+</tr>
+<tr>
+<td style="text-align:left">repairResult</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">巡检结果 0异常 1正常</td>
+</tr>
+<tr>
+<td style="text-align:left">createdDate</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">创建时间</td>
+</tr>
+<tr>
+<td style="text-align:left">isForward</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">是否转发E维云 0不转发 1转发</td>
+</tr>
+<tr>
+<td style="text-align:left">contentDesc</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">报修内容</td>
+</tr>
+<tr>
+<td style="text-align:left">sourceDesc</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">故障对象</td>
+</tr>
+<tr>
+<td style="text-align:left">level</td>
+<td style="text-align:left">float</td>
+<td style="text-align:left">工单紧急级别 值为星号数</td>
+</tr>
+<tr>
+<td style="text-align:left">imgs</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">集合 现场图片</td>
+</tr>
+<tr>
+<td style="text-align:left">imgs[0].url</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">图片地址</td>
+</tr>
+<tr>
+<td style="text-align:left">applier</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">报修人</td>
+</tr>
+<tr>
+<td style="text-align:left">applier.userId</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">报修人id</td>
+</tr>
+<tr>
+<td style="text-align:left">applier.name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">报修人名</td>
+</tr>
+<tr>
+<td style="text-align:left">applier.phone</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">报修人电话</td>
+</tr>
+<tr>
+<td style="text-align:left">applier.depts</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">报修人部门</td>
+</tr>
+<tr>
+<td style="text-align:left">accepter</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">接单人</td>
+</tr>
+<tr>
+<td style="text-align:left">accepter.userId</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">接单人id</td>
+</tr>
+<tr>
+<td style="text-align:left">accepter.name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">接单人名</td>
+</tr>
+<tr>
+<td style="text-align:left">confirmer</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">确认人</td>
+</tr>
+<tr>
+<td style="text-align:left">confirmer.userId</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">确认人id</td>
+</tr>
+<tr>
+<td style="text-align:left">confirmer.name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">确认人名</td>
+</tr>
+<tr>
+<td style="text-align:left">items</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">集合 维修项</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].id</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">维修项id</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].orderTypeId</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">工单类型id</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].orderTypeDesc</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">工单类型描述</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].faultTypeId</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">故障现象id</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].faultTypeDesc</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">故障现象描述</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].faultReasonId</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">故障原因id</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].faultReasonDesc</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">故障原因描述</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].faultProcessId</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">处理措施id</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].faultProcessDesc</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">处理措施描述</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].imgs</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">集合 维修项图片</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].imgs[0].id</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">图片id</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].imgs[0].url</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">图片路径</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].parts</td>
+<td style="text-align:left">object</td>
+<td style="text-align:left">维修项部件</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].parts[0].id</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">维修项部件id</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].parts[0].name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">维修项部件名称</td>
+</tr>
+<tr>
+<td style="text-align:left">items[0].parts[0].img</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">维修项部件图片</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>备注</strong><br>工单状态为”待处理”(flowStatus=2003或flowStatus=2005)，如下字段返回默认值<br>confirmer：{}<br>items：[]<br>repairResult:””<br>remark:””</p>
+<ul>
+<li>更多返回错误代码请看首页的错误代码描述</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/27/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+           
+              <p class="site-description motion-element" itemprop="description">记录生活点滴</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
