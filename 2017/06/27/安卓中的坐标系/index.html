@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head prefix="og: http://ogp.me/ns#">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="记录生活点滴">
+    <title>安卓中的坐标系 | 刘起玲的博客</title>
+
+    <!-- Open Graph -->
+    <meta name="description" content="&amp;#x5B89;&amp;#x5353;&amp;#x4E2D;&amp;#x7684;&amp;#x5750;&amp;#x6807;&amp;#x7CFB;&amp;#x4F5C;&amp;#x8005;&amp;#x5FAE;&amp;#x535A;: @GcsSloop&amp;#x3010;&amp;#x672C;&amp;#x7CFB;&amp;#x5217;&amp;#x76F8;&amp;#x5173;&amp;#x6587;&amp;#x7AE0;&amp;#x3011;&amp;#x4E00;.&amp;#x5C4F;&amp;#x5E55;&amp;#x5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安卓中的坐标系">
+<meta property="og:url" content="http://xiaominglei001.github.io/2017/06/27/安卓中的坐标系/index.html">
+<meta property="og:site_name" content="刘起玲的博客">
+<meta property="og:description" content="&amp;#x5B89;&amp;#x5353;&amp;#x4E2D;&amp;#x7684;&amp;#x5750;&amp;#x6807;&amp;#x7CFB;&amp;#x4F5C;&amp;#x8005;&amp;#x5FAE;&amp;#x535A;: @GcsSloop&amp;#x3010;&amp;#x672C;&amp;#x7CFB;&amp;#x5217;&amp;#x76F8;&amp;#x5173;&amp;#x6587;&amp;#x7AE0;&amp;#x3011;&amp;#x4E00;.&amp;#x5C4F;&amp;#x5E55;&amp;#x5">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/005Xtdi2jw1f1qygzfvhoj308c0dwglr.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Xtdi2jw1f1qyhbqvihj308c0dwjrh.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/005Xtdi2jw1f1qyhjy7h8j308c0dwq32.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/005Xtdi2gw1f1qzqwvkkbj308c0dwgm9.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005Xtdi2jw1f1r2bdlqhbj308c0dwwew.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/005Xtdi2gw1f1qn89ihu3j315o0dwwjc.jpg">
+<meta property="og:updated_time" content="2017-06-27T05:24:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="安卓中的坐标系">
+<meta name="twitter:description" content="&amp;#x5B89;&amp;#x5353;&amp;#x4E2D;&amp;#x7684;&amp;#x5750;&amp;#x6807;&amp;#x7CFB;&amp;#x4F5C;&amp;#x8005;&amp;#x5FAE;&amp;#x535A;: @GcsSloop&amp;#x3010;&amp;#x672C;&amp;#x7CFB;&amp;#x5217;&amp;#x76F8;&amp;#x5173;&amp;#x6587;&amp;#x7AE0;&amp;#x3011;&amp;#x4E00;.&amp;#x5C4F;&amp;#x5E55;&amp;#x5">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/005Xtdi2jw1f1qygzfvhoj308c0dwglr.jpg">
+
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:undefined",
+  "image": "undefined",
+  "name": "John Doe",
+  "url": "http://xiaominglei001.github.io"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
+</script>
+
+    
+
+    
+    
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
+
+</head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
+
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+    </div>
+
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>刘起玲的博客</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">John Doe</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+    
+    
+
+    
+
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        首页
+    </a>
+
+    
+
+    
+</div>
+
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-安卓中的坐标系" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    安卓中的坐标系
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <h1 id="&#x5B89;&#x5353;&#x4E2D;&#x7684;&#x5750;&#x6807;&#x7CFB;"><a href="#&#x5B89;&#x5353;&#x4E2D;&#x7684;&#x5750;&#x6807;&#x7CFB;" class="headerlink" title="&#x5B89;&#x5353;&#x4E2D;&#x7684;&#x5750;&#x6807;&#x7CFB;"></a>&#x5B89;&#x5353;&#x4E2D;&#x7684;&#x5750;&#x6807;&#x7CFB;</h1><h3 id="&#x4F5C;&#x8005;&#x5FAE;&#x535A;-GcsSloop"><a href="#&#x4F5C;&#x8005;&#x5FAE;&#x535A;-GcsSloop" class="headerlink" title="&#x4F5C;&#x8005;&#x5FAE;&#x535A;: @GcsSloop"></a>&#x4F5C;&#x8005;&#x5FAE;&#x535A;: <a href="http://weibo.com/GcsSloop" target="_blank" rel="external">@GcsSloop</a></h3><h3 id="&#x3010;&#x672C;&#x7CFB;&#x5217;&#x76F8;&#x5173;&#x6587;&#x7AE0;&#x3011;"><a href="#&#x3010;&#x672C;&#x7CFB;&#x5217;&#x76F8;&#x5173;&#x6587;&#x7AE0;&#x3011;" class="headerlink" title="&#x3010;&#x672C;&#x7CFB;&#x5217;&#x76F8;&#x5173;&#x6587;&#x7AE0;&#x3011;"></a><a href="http://www.gcssloop.com/1970/01/CustomViewIndex/" target="_blank" rel="external">&#x3010;&#x672C;&#x7CFB;&#x5217;&#x76F8;&#x5173;&#x6587;&#x7AE0;&#x3011;</a></h3><h2 id="&#x4E00;-&#x5C4F;&#x5E55;&#x5750;&#x6807;&#x7CFB;&#x548C;&#x6570;&#x5B66;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x533A;&#x522B;"><a href="#&#x4E00;-&#x5C4F;&#x5E55;&#x5750;&#x6807;&#x7CFB;&#x548C;&#x6570;&#x5B66;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x533A;&#x522B;" class="headerlink" title="&#x4E00;.&#x5C4F;&#x5E55;&#x5750;&#x6807;&#x7CFB;&#x548C;&#x6570;&#x5B66;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x533A;&#x522B;"></a>&#x4E00;.&#x5C4F;&#x5E55;&#x5750;&#x6807;&#x7CFB;&#x548C;&#x6570;&#x5B66;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x533A;&#x522B;</h2><p>&#x7531;&#x4E8E;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E00;&#x822C;&#x5B9A;&#x4E49;&#x5C4F;&#x5E55;&#x5DE6;&#x4E0A;&#x89D2;&#x4E3A;&#x5750;&#x6807;&#x539F;&#x70B9;&#xFF0C;&#x5411;&#x53F3;&#x4E3A;x&#x8F74;&#x589E;&#x5927;&#x65B9;&#x5411;&#xFF0C;&#x5411;&#x4E0B;&#x4E3A;y&#x8F74;&#x589E;&#x5927;&#x65B9;&#x5411;&#xFF0C;<br>&#x6240;&#x4EE5;&#x5728;&#x624B;&#x673A;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x5750;&#x6807;&#x7CFB;&#x4E0E;&#x6570;&#x5B66;&#x4E2D;&#x5E38;&#x89C1;&#x7684;&#x5750;&#x6807;&#x7CFB;&#x662F;&#x7A0D;&#x5FAE;&#x6709;&#x70B9;&#x5DEE;&#x522B;&#x7684;&#xFF0C;&#x8BE6;&#x60C5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#xFF08;<strong>PS&#xFF1A;&#x5176;&#x4E2D;&#x7684;&#x2220;a &#x662F;&#x5BF9;&#x5E94;&#x7684;&#xFF0C;&#x6CE8;&#x610F;y&#x8F74;&#x65B9;&#x5411;&#xFF01;</strong>&#xFF09;</p>
+<p><a class="magnific-img" href="http://ww2.sinaimg.cn/large/005Xtdi2jw1f1qygzfvhoj308c0dwglr.jpg"><img src="http://ww2.sinaimg.cn/large/005Xtdi2jw1f1qygzfvhoj308c0dwglr.jpg" alt="" class="ui centered image"></a><br><a class="magnific-img" href="http://ww1.sinaimg.cn/large/005Xtdi2jw1f1qyhbqvihj308c0dwjrh.jpg"><img src="http://ww1.sinaimg.cn/large/005Xtdi2jw1f1qyhbqvihj308c0dwjrh.jpg" alt="" class="ui centered image"></a></p>
+<p><strong>&#x5B9E;&#x9645;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x9ED8;&#x8BA4;&#x5750;&#x6807;&#x7CFB;&#x5982;&#x4E0B;&#xFF1A;</strong></p>
+<blockquote>
+<p>PS: &#x5047;&#x8BBE;&#x5176;&#x4E2D;&#x68D5;&#x8272;&#x90E8;&#x5206;&#x4E3A;&#x624B;&#x673A;&#x5C4F;&#x5E55;</p>
+</blockquote>
+<p><a class="magnific-img" href="http://ww3.sinaimg.cn/large/005Xtdi2jw1f1qyhjy7h8j308c0dwq32.jpg"><img src="http://ww3.sinaimg.cn/large/005Xtdi2jw1f1qyhjy7h8j308c0dwq32.jpg" alt="" class="ui centered image"></a></p>
+<h2 id="&#x4E8C;-View&#x7684;&#x5750;&#x6807;&#x7CFB;"><a href="#&#x4E8C;-View&#x7684;&#x5750;&#x6807;&#x7CFB;" class="headerlink" title="&#x4E8C;.View&#x7684;&#x5750;&#x6807;&#x7CFB;"></a>&#x4E8C;.View&#x7684;&#x5750;&#x6807;&#x7CFB;</h2><p><strong>&#x6CE8;&#x610F;&#xFF1A;View&#x7684;&#x5750;&#x6807;&#x7CFB;&#x7EDF;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x7236;&#x63A7;&#x4EF6;&#x800C;&#x8A00;&#x7684;.</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">getTop();       <span class="comment">//&#x83B7;&#x53D6;&#x5B50;View&#x5DE6;&#x4E0A;&#x89D2;&#x8DDD;&#x7236;View&#x9876;&#x90E8;&#x7684;&#x8DDD;&#x79BB;</span></div><div class="line">getLeft();      <span class="comment">//&#x83B7;&#x53D6;&#x5B50;View&#x5DE6;&#x4E0A;&#x89D2;&#x8DDD;&#x7236;View&#x5DE6;&#x4FA7;&#x7684;&#x8DDD;&#x79BB;</span></div><div class="line">getBottom();    <span class="comment">//&#x83B7;&#x53D6;&#x5B50;View&#x53F3;&#x4E0B;&#x89D2;&#x8DDD;&#x7236;View&#x9876;&#x90E8;&#x7684;&#x8DDD;&#x79BB;</span></div><div class="line">getRight();     <span class="comment">//&#x83B7;&#x53D6;&#x5B50;View&#x53F3;&#x4E0B;&#x89D2;&#x8DDD;&#x7236;View&#x5DE6;&#x4FA7;&#x7684;&#x8DDD;&#x79BB;</span></div></pre></td></tr></table></figure>
+<p><strong>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</strong></p>
+<p><a class="magnific-img" href="http://ww2.sinaimg.cn/large/005Xtdi2gw1f1qzqwvkkbj308c0dwgm9.jpg"><img src="http://ww2.sinaimg.cn/large/005Xtdi2gw1f1qzqwvkkbj308c0dwgm9.jpg" alt="" class="ui centered image"></a></p>
+<h2 id="&#x4E09;-MotionEvent&#x4E2D;-get-&#x548C;-getRaw-&#x7684;&#x533A;&#x522B;"><a href="#&#x4E09;-MotionEvent&#x4E2D;-get-&#x548C;-getRaw-&#x7684;&#x533A;&#x522B;" class="headerlink" title="&#x4E09;.MotionEvent&#x4E2D; get &#x548C; getRaw &#x7684;&#x533A;&#x522B;"></a>&#x4E09;.MotionEvent&#x4E2D; get &#x548C; getRaw &#x7684;&#x533A;&#x522B;</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">event</span>.getX();       <span class="comment">//&#x89E6;&#x6478;&#x70B9;&#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x6240;&#x5728;&#x7EC4;&#x4EF6;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x5750;&#x6807;</span></div><div class="line"><span class="keyword">event</span>.getY();</div><div class="line"> </div><div class="line"><span class="keyword">event</span>.getRawX();    <span class="comment">//&#x89E6;&#x6478;&#x70B9;&#x76F8;&#x5BF9;&#x4E8E;&#x5C4F;&#x5E55;&#x9ED8;&#x8BA4;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x5750;&#x6807;</span></div><div class="line"><span class="keyword">event</span>.getRawY();</div></pre></td></tr></table></figure>
+<p><strong>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</strong></p>
+<blockquote>
+<p>PS:&#x5176;&#x4E2D;&#x76F8;&#x540C;&#x989C;&#x8272;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x5BF9;&#x5E94;&#x7684;&#xFF0C;&#x5176;&#x4E2D;&#x4E3A;&#x4E86;&#x663E;&#x793A;&#x65B9;&#x4FBF;&#xFF0C;&#x84DD;&#x8272;&#x7BAD;&#x5934;&#x5411;&#x5DE6;&#x7A0D;&#x5FAE;&#x504F;&#x79FB;&#x4E86;&#x4E00;&#x70B9;.</p>
+</blockquote>
+<p><a class="magnific-img" href="http://ww1.sinaimg.cn/large/005Xtdi2jw1f1r2bdlqhbj308c0dwwew.jpg"><img src="http://ww1.sinaimg.cn/large/005Xtdi2jw1f1r2bdlqhbj308c0dwwew.jpg" alt="" class="ui centered image"></a></p>
+<h2 id="&#x56DB;-&#x6838;&#x5FC3;&#x8981;&#x70B9;"><a href="#&#x56DB;-&#x6838;&#x5FC3;&#x8981;&#x70B9;" class="headerlink" title="&#x56DB;.&#x6838;&#x5FC3;&#x8981;&#x70B9;"></a>&#x56DB;.&#x6838;&#x5FC3;&#x8981;&#x70B9;</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">&#x5E8F;&#x53F7;</th>
+<th>&#x8981;&#x70B9;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">  1</td>
+<td>&#x5728;&#x6570;&#x5B66;&#x4E2D;&#x5E38;&#x89C1;&#x7684;&#x5750;&#x6807;&#x7CFB;&#x4E0E;&#x5C4F;&#x5E55;&#x9ED8;&#x8BA4;&#x5750;&#x6807;&#x7CFB;&#x7684;&#x5DEE;&#x522B;</td>
+</tr>
+<tr>
+<td style="text-align:center">  2</td>
+<td>View&#x7684;&#x5750;&#x6807;&#x7CFB;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x7236;&#x63A7;&#x4EF6;&#x800C;&#x8A00;&#x7684;</td>
+</tr>
+<tr>
+<td style="text-align:center">  3</td>
+<td>MotionEvent&#x4E2D;get&#x548C;getRaw&#x7684;&#x533A;&#x522B;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x4E94;-&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;"><a href="#&#x4E94;-&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;" class="headerlink" title="&#x4E94;.&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;"></a>&#x4E94;.&#x53C2;&#x8003;&#x6587;&#x7AE0;&#xFF1A;</h2><p><a href="http://blog.csdn.net/wangjinyu501/article/details/21827341" target="_blank" rel="external">Android &#x5C4F;&#x5E55;&#xFF08;View&#xFF09;&#x5750;&#x6807;&#x7CFB;&#x7EDF;</a></p>
+<h2 id="About-Me"><a href="#About-Me" class="headerlink" title="About Me"></a>About Me</h2><h3 id="&#x4F5C;&#x8005;&#x5FAE;&#x535A;-GcsSloop-1"><a href="#&#x4F5C;&#x8005;&#x5FAE;&#x535A;-GcsSloop-1" class="headerlink" title="&#x4F5C;&#x8005;&#x5FAE;&#x535A;: @GcsSloop"></a>&#x4F5C;&#x8005;&#x5FAE;&#x535A;: <a href="http://weibo.com/GcsSloop" target="_blank">@GcsSloop</a></h3><p><a href="http://www.gcssloop.com/1970/01/about/" target="_blank"> <a class="magnific-img" href="http://ww4.sinaimg.cn/large/005Xtdi2gw1f1qn89ihu3j315o0dwwjc.jpg"><img src="http://ww4.sinaimg.cn/large/005Xtdi2gw1f1qn89ihu3j315o0dwwjc.jpg" width="300/" class="ui centered image"></a> </a></p>
+
+                        
+                    </div>
+
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-06-27T04:38:29.000Z" itemprop="datePublished">2017-06-27</time>
+
+    </span>
+    <span class="post-description-item">
+        
+    </span>
+</div>
+
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
+
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
+
+                <a class="ui tiny button disabled"><i class="angle left icon"></i>前一篇</a>
+
+                
+            </div>
+            <div class="column nav-right">
+                
+
+                <a href="/2017/06/27/hello-world/" class="ui tiny button">
+                    
+                    Hello World
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+                
+            </div>
+
+            
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#安卓中的坐标系"><span>安卓中的坐标系</span></a><ol><li><a href="#作者微博-GcsSloop"><span>作者微博: @GcsSloop</span></a></li><li><a href="#【本系列相关文章】"><span>【本系列相关文章】</span></a></li></ol></li><li><a href="#一-屏幕坐标系和数学坐标系的区别"><span>一.屏幕坐标系和数学坐标系的区别</span></a></li><li><a href="#二-View的坐标系"><span>二.View的坐标系</span></a></li><li><a href="#三-MotionEvent中-get-和-getRaw-的区别"><span>三.MotionEvent中 get 和 getRaw 的区别</span></a></li><li><a href="#四-核心要点"><span>四.核心要点</span></a></li><li><a href="#五-参考文章："><span>五.参考文章：</span></a></li><li><a href="#About-Me"><span>About Me</span></a><ol><li><a href="#作者微博-GcsSloop-1"><span>作者微博: @GcsSloop</span></a></li></ol></li></ol></li></ol>
+                </div>
+
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2017 <a href="/">John Doe</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
+
+    </div>
+
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
+
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
+
+<script src="/js/semantic-ui-algolia.js"></script>
+
+<script src="/js/aloha-events.js"></script>
+
+
+
+</body>
+</html>
